@@ -1,0 +1,153 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+    background: url("../images/Commitee/Bg.jpg") no-repeat center center
+      fixed;
+    background-size: cover;
+    background-color: linear-gradient(to bottom, #fd2323, #ffffff);
+    background: linear-gradient(
+        to bottom,
+        rgba(253, 35, 35, 0.6),
+        rgba(255, 255, 255, 0.6)
+      ),
+      url("Bg.jpg") no-repeat center center fixed;
+    opacity: 1;
+    background-size: cover;
+  }
+
+  .container {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: linear-gradient(to bottom, #fd2323, #ffffff);
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .content h1 {
+    font-size: 56px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: poppins;
+  }
+
+  .content p {
+    font-size: 24px;
+    line-height: 1.6;
+    font-family: inter;
+    text-align: justify;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .sidebar-img {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    margin-right: 100px;
+    gap: 3px;
+  }
+
+  .header-with-logo {
+display: flex;
+align-items: center;
+}
+
+.logo-img {
+max-width: 150px; /* Adjust the size as needed */
+margin-right: 5px; /* Reduced margin to make the logo closer to the text */
+}
+  /* Mobile responsiveness */
+  @media (max-width: 1024px) {
+    .content h1 {
+      font-size: 48px;
+    }
+
+    .content p {
+      font-size: 20px;
+    }
+
+    .sidebar-img {
+      max-width: 300px;
+      margin-right: 50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    .content h1 {
+      font-size: 40px;
+    }
+
+    .content p {
+      font-size: 18px;
+    }
+
+    .sidebar {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .sidebar-img {
+      max-width: 45%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .content h1 {
+      font-size: 32px;
+      padding-top: 161px;
+    }
+
+    .content p {
+      font-size: 16px;
+    }
+
+    .sidebar {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sidebar-img {
+      max-width: 100%;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 600px) {
+        .logo-img {
+          display: block;
+          margin: 126px auto;
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+    }

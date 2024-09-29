@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AppRouter from './router';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+import Committee from './pages/commitee/Commitee';
 
 function App() {
   const [showButton, setShowButton] = useState(false);
@@ -31,6 +32,7 @@ function App() {
         <AppRouter />
       </main>
       <Footer />
+      
       <div
         className={`fixed hidden lg:flex bottom-4 z-50 right-4 w-14 h-14 rounded-md bg-blue-500 text-white items-center justify-center cursor-pointer ${showButton ? 'visible' : 'invisible'}`}
         onClick={scrollToTop}

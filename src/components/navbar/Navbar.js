@@ -1,21 +1,21 @@
 import React from 'react'
 // import './Navbar.css'
 import { LOGO } from '../../utils/constant';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <header id="header">
       <div class="logo">
-        <a href="index.html"><img src={LOGO} alt="logo" /></a>
+        <Link to="/"><img src={LOGO} alt="logo" /></Link>
       </div>
       <nav id="nav">
         <ul>
           <li>
-            <a id="active" href="/">Home</a>
+            <Link id="active" to="/">Home</Link>
           </li>
           <li>
-            <a href="src/Pages/Committee&Agenda.html">Committees and Agendas</a>
+            <Link to="/committee-agenda">Committees and Agendas</Link>
           </li>
           {/* <li>
             <a href="#">Our Organisation

@@ -1,0 +1,193 @@
+.countdown {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.progress-container {
+  display: inline-block;
+  margin: 10px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-ring__circle {
+  fill: transparent;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.progress-ring__background {
+  stroke: #070707;
+}
+
+.progress-ring__bar {
+  stroke: #fe491e;
+}
+
+.progress-text {
+  fill: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .progress-ring {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress-ring__circle {
+    stroke-width: 6;
+  }
+
+  .progress-text {
+    font-size: 1rem;
+  }
+
+  .progress-container p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .progress-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .progress-ring__circle {
+    stroke-width: 6;
+  }
+
+  .progress-text {
+    font-size: 1.5rem;
+  }
+
+  .progress-container {
+    margin: 1px;
+  }
+
+  .progress-container p {
+    font-size: 0.7rem;
+  }
+}
+
+.countdown {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  /* background-color: #fe491e; */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.progress-container {
+  display: inline-block;
+  margin: 10px;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring__circle {
+  fill: transparent;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.progress-ring__background {
+  stroke: #070707;
+}
+
+.progress-ring__bar {
+  stroke: #fe491e;
+}
+
+.progress-text {
+  fill: #ffffff;
+  /* Text color */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 600px) {
+  .progress-ring {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress-ring__circle {
+    stroke-width: 6;
+    /* Reduce stroke width for smaller SVG */
+  }
+
+  .progress-text {
+    font-size: 1rem;
+  }
+
+  .progress-container p {
+    font-size: 0.8rem;
+  }
+
+  .progress-container {
+    margin: 0;
+  }
+
+  .welcomeText {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .progress-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .progress-ring__circle {
+    stroke-width: 6;
+    /* Further reduce stroke width for even smaller SVG */
+  }
+
+  .progress-text {
+    font-size: 1.5rem;
+  }
+
+  .progress-container {
+    margin: 1px;
+  }
+
+  .progress-container p {
+    font-size: 0.7rem;
+  }
+}
+
+.elephant-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: auto;
+  z-index: -1;
+}
+
+.elfsight-app-b399437b-d091-4fd2-97e4-555699fa089e {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}

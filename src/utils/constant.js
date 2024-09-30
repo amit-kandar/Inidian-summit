@@ -15,3 +15,5 @@ export const MRN_LOGO = require('../assets/Intro_Theme/Mrn logo.png')
 export const COMMITEE1 = require('../assets/Commitee/picture 1.jpg')
 export const COMMITEE2 = require('../assets/Commitee/picture 2.jpg')
 export const COMMITEE3 = require('../assets/Commitee/picture 3.jpg')
+export const FOUNDERBG = require('../assets/Homepage/founderbg.jpg');
+export const FOUNDER_IMAGE = require('../assets/Homepage/Founder Secretary.jpg')

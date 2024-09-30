@@ -1,81 +1,14 @@
-.countdown {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.progress-container {
-  display: inline-block;
-  margin: 10px;
-}
-
-.progress-ring {
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-}
-
-.progress-ring__circle {
-  fill: transparent;
-  stroke-width: 11;
-  stroke-linecap: round;
-}
-
-.progress-ring__background {
-  stroke: #070707;
-}
-
-.progress-ring__bar {
-  stroke: #fe491e;
-}
-
-.progress-text {
-  fill: #ffffff;
-  font-size: 2rem;
+.welcomeText {
+  font-size: 3rem;
   font-weight: bold;
-}
-
-@media (max-width: 600px) {
-  .progress-ring {
-    width: 80px;
-    height: 80px;
-  }
-
-  .progress-ring__circle {
-    stroke-width: 6;
-  }
-
-  .progress-text {
-    font-size: 1rem;
-  }
-
-  .progress-container p {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 460px) {
-  .progress-ring {
-    width: 50px;
-    height: 50px;
-  }
-
-  .progress-ring__circle {
-    stroke-width: 6;
-  }
-
-  .progress-text {
-    font-size: 1.5rem;
-  }
-
-  .progress-container {
-    margin: 1px;
-  }
-
-  .progress-container p {
-    font-size: 0.7rem;
-  }
+  background: linear-gradient(45deg, #fe491e, #cb7300);
+  /* Gradient color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Text color from gradient */
+  text-shadow: 10px 8px 30px rgba(0, 0, 0, 0.7);
+  /* Text shadow */
+  margin: 0;
 }
 
 .countdown {
@@ -190,4 +123,49 @@
   bottom: 20px;
   right: 20px;
   z-index: 1000;
+}
+
+
+/* MOBILE VIEW Begin */
+@media (max-width: 600px) {
+  .center-image {
+    /* padding-top: 28%; */
+  }
+
+  .center-logo {
+    width: 79%;
+  }
+
+  .countdown {
+    padding-top: 8%;
+    width: 87%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .countdown img {
+    padding-top: 11%;
+    width: 25%;
+    height: auto;
+  }
+
+  .countdown-timer {
+    font-size: 14px;
+  }
+
+  .elfsight-app-b399437b-d091-4fd2-97e4-555699fa089e {
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel img {
+    height: 276px;
+    object-fit: cover;
+  }
+
+  .container .item-1 .social {
+    justify-content: center;
+  }
 }

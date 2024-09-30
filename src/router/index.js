@@ -4,6 +4,7 @@ import Home from '../pages/home/Home';
 import Committee from '../pages/commitee/Commitee';
 import Mrn from '../pages/mrn/Mrn';
 import CommitteeDetail from '../components/CommitteeDetail/CommitteeDetail';
+import ContactUs from '../pages/contact/ContactUs';
 // import About from '../pages/about/About';
 
 function AppRouter() {
@@ -13,7 +14,7 @@ function AppRouter() {
       <Route path="/committee-agenda/" element={<Committee />} />
       <Route path="/committee-agenda/:link" element={<CommitteeDetail />} />
       <Route path="/MRN" element={<Mrn />} />
-      {/* <Route path="/" element={<About />} /> */}
+      <Route path="/contact-us" element={<ContactUs />} />
     </Routes>
   );
 }

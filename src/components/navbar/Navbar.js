@@ -42,8 +42,7 @@ const Navbar = () => {
               <li><a href="src/Pages/Profile.html">Meet the Secretariat</a></li>
             </ul>
           </li>
-          <li><a href="schedule">Schedule</a></li>
-          <li><a href="src/Pages/Contact Us.html">Contact Us</a></li>
+          <li><Link to="/contact-us">Contact Us</Link></li>
 
         </ul>
       </nav>

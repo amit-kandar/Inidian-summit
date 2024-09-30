@@ -1,106 +1,140 @@
-#header {
-        background-color: transparent;
-      }
-      body {
-        background-image: url("../images/Contact Us/image 79.png");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-color: rgb(0 0 0 / 95%);
-      }
-      .contactus-background {
-        position: relative;
-        height: 140vh;
-        display: flex; /* Align items in the center */
-        align-items: center;
-        justify-content: center;
-        padding: 20px; /* Added padding to ensure space around the edges */
-        z-index: -1;
-      }
+/* Specific style for Theme.html */
+#contact-us {
+  background-color: transparent;
+  padding-top: 6rem;
+}
 
-      .contactus-background::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
+#contact-us {
+  background-image: url("../../assets/Contact Us/image 79.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgb(0 0 0 / 95%);
+}
 
-      .contactus-background >/* Existing styles */
+.contactus-background {
+  position: relative;
+  height: 140vh;
+  display: flex;
+  /* Align items in the center */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* Added padding to ensure space around the edges */
+  z-index: -1;
+}
+
+.contactus-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.contactus-background>
+
+/* Existing styles */
 .text12-lg {
-        font-size: 1.125rem; /* Default font size */
-      }
+  font-size: 1.125rem;
+  /* Default font size */
+}
 
-      /* Media query for mobile view */
-      @media screen and (max-width: 550px) {
-        .mobile-height {
-          height: 40vh;
-        }
-        .text12-lg {
-          font-size: 17px; /* Adjust font size for mobile view */
-        }
-      }
-      * {
-        position: relative;
-        z-index: 2; /* Ensures the form content is above the overlay */
-      }
+/* Media query for mobile view */
+@media screen and (max-width: 550px) {
+  .mobile-height {
+    height: 40vh;
+  }
 
-      /* Logo Background for First and Last Name Fields */
-      .logo-background {
-        background-image: url("../images/Homepage/Logo.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 60vh;
-      }
+  .text12-lg {
+    font-size: 17px;
+    /* Adjust font size for mobile view */
+  }
+}
 
-      /* Responsive adjustments for input fields */
-      @media (max-width: 1024px) {
-        .mobile-height {
-          height: 40vh;
-        }
-        .lg\:w-1\/2 {
-          width: 100%;
-        }
-        .lg\:flex {
-          flex-direction: column;
-        }
-        .rounded-l-lg,
-        .rounded-r-lg {
-          border-radius: 8px; /* Added consistent rounded corners for smaller screens */
-        }
-      }
+* {
+  position: relative;
+  z-index: 2;
+  /* Ensures the form content is above the overlay */
+}
 
-      /* Ensuring input fields have consistent styling */
-      input[type="text"] {
-        width: 100%; /* Full width for smaller screens */
-        margin-top: 0.5rem; /* Consistent spacing above inputs */
-        margin-bottom: 1rem; /* Consistent spacing below inputs */
-        padding: 0.5rem; /* Comfortable padding for text entry */
-        border-radius: 0.5rem; /* Rounded corners for inputs */
-        border: 1px solid #ccc; /* Subtle border color */
-        transition: border-color 0.3s ease; /* Smooth transition for focus state */
-      }
+/* Logo Background for First and Last Name Fields */
+.logo-background {
+  background-image: url("../../assets/Homepage/Logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 60vh;
+}
 
-      input[type="text"]:focus {
-        border-color: #4f2b06; /* Darker border color on focus */
-        outline: none; /* Remove default outline */
-      }
+/* Responsive adjustments for input fields */
+@media (max-width: 1024px) {
+  .mobile-height {
+    height: 40vh;
+  }
 
-      /* Button styling */
-      button {
-        background-color: #4f2b06; /* Set button color to your preferred color */
-        color: white; /* Text color inside the button */
-        padding: 0.75rem 1.5rem; /* Padding for the button */
-        border-radius: 9999px; /* Fully rounded button */
-        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover states */
-      }
+  .lg\:w-1\/2 {
+    width: 100%;
+  }
 
-      button:hover {
-        background-color: white; /* Change background color on hover */
-        color: #4f2b06; /* Change text color on hover */
-      }
-      .hidden {
-        display: none;
-      }
+  .lg\:flex {
+    flex-direction: column;
+  }
+
+  .rounded-l-lg,
+  .rounded-r-lg {
+    border-radius: 8px;
+    /* Added consistent rounded corners for smaller screens */
+  }
+}
+
+/* Ensuring input fields have consistent styling */
+input[type="text"] {
+  width: 100%;
+  /* Full width for smaller screens */
+  margin-top: 0.5rem;
+  /* Consistent spacing above inputs */
+  margin-bottom: 1rem;
+  /* Consistent spacing below inputs */
+  padding: 0.5rem;
+  /* Comfortable padding for text entry */
+  border-radius: 0.5rem;
+  /* Rounded corners for inputs */
+  border: 1px solid #ccc;
+  /* Subtle border color */
+  transition: border-color 0.3s ease;
+  /* Smooth transition for focus state */
+}
+
+input[type="text"]:focus {
+  border-color: #4f2b06;
+  /* Darker border color on focus */
+  outline: none;
+  /* Remove default outline */
+}
+
+/* Button styling */
+button {
+  background-color: #4f2b06;
+  /* Set button color to your preferred color */
+  color: white;
+  /* Text color inside the button */
+  padding: 0.75rem 1.5rem;
+  /* Padding for the button */
+  border-radius: 9999px;
+  /* Fully rounded button */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transition for hover states */
+}
+
+button:hover {
+  background-color: white;
+  /* Change background color on hover */
+  color: #4f2b06;
+  /* Change text color on hover */
+}
+
+.hidden {
+  display: none;
+}

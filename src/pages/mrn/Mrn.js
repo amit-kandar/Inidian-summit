@@ -5,7 +5,7 @@ import { COMMITEE1, COMMITEE2, COMMITEE3, MRN_LOGO } from '../../utils/constant'
 const Mrn = () => {
   return (
     <section className='mrn-section'>
-      <div className="container" style={{ width: 'auto' }}>
+      <div className="mrn-container" style={{ width: 'auto' }}>
         <div className="content">
           <div className="header-with-logo">
             <img

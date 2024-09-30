@@ -1,0 +1,45 @@
+/* Committee.css */
+.background-overlay {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: brightness(20%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.indivi-heading {
+  font-size: 70px;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(252, 28, 28, 0.4),
+    0 0 20px rgba(252, 28, 28, 0.4), 0 0 30px rgba(252, 28, 28, 0.4);
+
+  margin: 40px 0;
+}
+
+.indivi-sub-heading {
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  margin: 0 90px;
+}
+
+@media (max-width: 480px) {
+  .indivi-heading {
+    font-size: 35px;
+  }
+
+  .indivi-sub-heading {
+    font-size: 20px;
+  }
+}

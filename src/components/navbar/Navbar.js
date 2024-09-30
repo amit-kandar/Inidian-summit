@@ -30,7 +30,7 @@ const Navbar = () => {
           <li><a href="#">Collabrations and Sponsors </a></li>
           <li><a href="#">Events</a></li> */}
           <li>
-            <a href="src/Pages/MRN.html">Mahila Sashaktikaran Avam Rastra Nirmarn</a>
+            <Link to="/MRN">Mahila Sashaktikaran Avam Rastra Nirmarn</Link>
           </li>
           <li>
             <a href="/about-us">About Us

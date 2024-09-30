@@ -1,6 +1,7 @@
 import React from 'react';
 import { FOUNDER_IMAGE, FOUNDERBG, LOGO } from '../../utils/constant';
 import Countdown from '../../components/countdown/Countdown';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -37,9 +38,9 @@ const Home = () => {
             </p>
 
             <div className="text-center w-100 text-md-start" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <a href="/Registration.html">
+              <Link to="/register">
                 <button className="about_btn" data-bs-toggle="tooltip" data-bs-title="Contact Now">Register Now</button>
-              </a>
+              </Link>
             </div>
 
           </div>

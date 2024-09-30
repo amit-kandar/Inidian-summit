@@ -8,6 +8,7 @@ import ContactUs from '../pages/contact/ContactUs';
 import Introduction from '../pages/about/introduction/Introduction';
 import Theme from '../pages/about/theme/Theme';
 import Profile from '../pages/about/profile/Profile';
+import Register from '../pages/register/Register';
 
 function AppRouter() {
   return (
@@ -20,6 +21,7 @@ function AppRouter() {
       <Route path="/about/introduction" element={<Introduction />} />
       <Route path="/about/theme" element={<Theme />} />
       <Route path="/about/profile" element={<Profile />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   );
 }

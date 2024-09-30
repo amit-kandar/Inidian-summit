@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="item-2">
-                    <a href="/">Register</a>
+                    <a href="/register">Register</a>
                 </div>
             </div>
         </footer>

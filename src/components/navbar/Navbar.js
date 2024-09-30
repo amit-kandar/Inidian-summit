@@ -46,9 +46,9 @@ const Navbar = () => {
 
         </ul>
       </nav>
-      <a href="src/Pages/Registration.html">
+      <Link to="/register">
         <button id="Register_button">Register Now</button>
-      </a>
+      </Link>
       <div id="hamburger">&#9776;</div>
       <div id="cross">&times;</div>
     </header>

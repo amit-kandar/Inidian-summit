@@ -3,6 +3,8 @@ import './popup.css'
 import { LOGO } from '../../utils/constant';
 
 const index = () => {
+
+
   return (
     <div className="popup-overlay" id="popupOverlay">
       <div className="popup" id="popup">

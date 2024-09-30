@@ -33,9 +33,9 @@ const Navbar = () => {
             <Link to="/MRN">Mahila Sashaktikaran Avam Rastra Nirmarn</Link>
           </li>
           <li>
-            <a href="/about-us">About Us
+            <Link to="/">About Us
               <i class='fas fa-angle-down'></i>
-            </a>
+            </Link>
             <ul id="about">
               <li><Link to="/about/introduction">Introduction to The Indian Summit</Link></li>
               <li><Link to="/about/theme">Theme of The Indian Summit 24</Link></li>

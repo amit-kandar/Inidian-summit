@@ -1,0 +1,71 @@
+.intro-title {
+  background-image: url("../../../assets/Intro_Theme/image 1.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+  height: 60vh;
+}
+
+.intro-title-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15vh 20px;
+}
+
+.intro-heading {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  font-weight: 900;
+  font-family: "cinzel", ui-sans-serif;
+}
+
+.Introduction {
+  background-image: url("../../../assets/Intro_Theme/image 1 - Copy.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: auto;
+  height: auto;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Introduction-center p {
+  color: white;
+  padding: 0 100px;
+  text-align: justify;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 20px;
+}
+
+.contact-link {
+  text-decoration: underline;
+  /* Adds underline to the links */
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 35px;
+  }
+
+  p {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+
+  .title-center {
+    padding: 15vh 20px;
+  }
+
+  .Introduction {
+    text-align: center;
+    padding: 20px 20px;
+    height: auto;
+  }
+}

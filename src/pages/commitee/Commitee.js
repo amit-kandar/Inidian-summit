@@ -13,7 +13,11 @@ const Committee = () => {
           <div className="grid-item" key={committee.name}>
             <Link to={`/committee-agenda/${committee.link}`}>
               <div className="overlay"></div>
-              <img src={committee.image} alt={committee.name} />
+              <img
+                src={committee.image}
+                alt={committee.name}
+                style={{ filter: "hue-rotate(30deg) opacity(0.5)" }}
+              />
               <p>{committee.name}</p>
             </Link>
           </div>

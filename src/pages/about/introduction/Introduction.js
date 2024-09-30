@@ -4,16 +4,16 @@ import './introduction.css';
 const Introduction = () => {
   return (
     <section>
-      <div class="intro-title" style={{ paddingTop: '6rem' }}>
-        <div class="intro-title-center">
-          <h1 class="intro-heading" >
+      <div className="intro-title" style={{ paddingTop: '6rem' }}>
+        <div className="intro-title-center">
+          <h1 className="intro-heading" >
             Introduction To The Indian Summit
           </h1>
         </div>
       </div>
 
-      <div class="Introduction">
-        <div class="Introduction-center">
+      <div className="Introduction">
+        <div className="Introduction-center">
           <p>
             THE INDIAN SUMMIT is not just a conference designed to bring together
             delegates from around the country to engage in debates on ongoing and
@@ -53,11 +53,11 @@ const Introduction = () => {
 
           <p>
             Contact us <br />
-            <a href="tel:+917665999929" class="contact-link"
+            <a href="tel:+917665999929" className="contact-link"
             >Phone: +917665999929</a
             >
             <br />
-            <a href="mailto:info@theindiansummit.com" class="contact-link">
+            <a href="mailto:info@theindiansummit.com" className="contact-link">
               Email: info@theindiansummit.com
             </a>
           </p>

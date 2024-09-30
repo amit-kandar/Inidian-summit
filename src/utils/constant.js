@@ -23,3 +23,5 @@ export const COMMITEE3 = require('../assets/Commitee/picture 3.jpg')
 export const FOUNDERBG = require('../assets/Homepage/founderbg.jpg');
 export const FOUNDER_IMAGE = require('../assets/Homepage/Founder Secretary.jpg')
 export const PHONE_ICON = require('../assets/Contact Us/phone.png')
+export const VISION_IMAGE = require('../assets/Intro_Theme/image.png')
+export const IMAGE_2 = require('../assets/Intro_Theme/img2.png')

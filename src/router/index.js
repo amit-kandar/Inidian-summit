@@ -6,7 +6,8 @@ import Mrn from '../pages/mrn/Mrn';
 import CommitteeDetail from '../components/CommitteeDetail/CommitteeDetail';
 import ContactUs from '../pages/contact/ContactUs';
 import Introduction from '../pages/about/introduction/Introduction';
-// import About from '../pages/about/About';
+import Theme from '../pages/about/theme/Theme';
+import Profile from '../pages/about/profile/Profile';
 
 function AppRouter() {
   return (
@@ -17,6 +18,8 @@ function AppRouter() {
       <Route path="/MRN" element={<Mrn />} />
       <Route path="/contact-us" element={<ContactUs />} />
       <Route path="/about/introduction" element={<Introduction />} />
+      <Route path="/about/theme" element={<Theme />} />
+      <Route path="/about/profile" element={<Profile />} />
     </Routes>
   );
 }

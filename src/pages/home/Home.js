@@ -91,7 +91,7 @@ const Home = () => {
                   />
                 </div>
                 <h2
-                  className="text-capitalize fw-bolder"
+                  className="text-capitalize text-3xl fw-bolder"
                   style={{
                     color: '#fe491e',
                     paddingTop: '40px',

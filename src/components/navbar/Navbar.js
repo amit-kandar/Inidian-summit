@@ -38,8 +38,8 @@ const Navbar = () => {
             </a>
             <ul id="about">
               <li><Link to="/about/introduction">Introduction to The Indian Summit</Link></li>
-              <li><a href="src/Pages/Theme.html">Theme of The Indian Summit 24</a></li>
-              <li><a href="src/Pages/Profile.html">Meet the Secretariat</a></li>
+              <li><Link to="/about/theme">Theme of The Indian Summit 24</Link></li>
+              <li><Link to="/about/profile">Meet the Secretariat</Link></li>
             </ul>
           </li>
           <li><Link to="/contact-us">Contact Us</Link></li>

@@ -2,6 +2,7 @@ import React from "react";
 import { FOUNDER_IMAGE, FOUNDERBG, LOGO } from "../../utils/constant";
 import Countdown from "../../components/countdown/Countdown";
 import { Link } from "react-router-dom";
+import "./home.css";
 
 const Home = () => {
   return (
@@ -30,7 +31,7 @@ const Home = () => {
               style={{
                 color: "#fe491e",
                 textAlign: "center",
-                fontSize: "50px",
+                fontSize: "2.3rem",
                 fontFamily: "Poppins",
               }}
             >
@@ -73,7 +74,7 @@ const Home = () => {
               color: "#fe491e",
               textAlign: "center",
               paddingTop: "40px",
-              fontSize: "50px",
+              fontSize: "2.3rem",
               fontFamily: "Poppins",
             }}
           >
@@ -130,7 +131,7 @@ const Home = () => {
         >
           <div className="container">
             <div className="row">
-              <div className="col-12 position-relative">
+              <div className="col-12">
                 <div className="founder-photo">
                   <img
                     src={FOUNDER_IMAGE}
@@ -142,11 +143,11 @@ const Home = () => {
                   className="text-capitalize text-3xl fw-bolder"
                   style={{
                     color: "#fe491e",
-                    fontSize: "50px",
-                    paddingTop: "50px",
+                    fontSize: "2.3rem",
                     fontFamily: "Poppins, sans-serif",
                   }}
                 >
+                  {/* added CSS (home.css) to resolve overlapping)*/}
                   Founder & Secretary General’s Message
                 </h2>
                 <div className="founder-message">

@@ -242,9 +242,11 @@ const Register = () => {
                   {formik.errors.terms && formik.touched.terms && <Error msg={formik.errors.terms} />}
                 </div>
 
-                <button type="submit" id="applyButton" className="applybtn fs-4 text-dark">
-                  Apply
-                </button>
+                <div className='col-span-2'>
+                  <button type="submit" id="applyButton" className="applybtn fs-4 text-dark">
+                    Apply
+                  </button>
+                </div>
               </form>
             </div>
           </div>

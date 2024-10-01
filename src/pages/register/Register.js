@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import { useFormik } from 'formik';
-import registerSchema from '../../schema/registerSchema';
-import Error from '../../components/Error';
+import React, { useState } from "react";
+import { useFormik } from "formik";
+import registerSchema from "../../schema/registerSchema";
+import Error from "../../components/Error";
 // import axios from 'axios';
-import './register.css';
+import "./register.css";
 
 const Register = () => {
   const [accommodation, setAccommodation] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
 
   const initialValues = {
-    fullname: '',
-    institution: '',
-    contact: '',
-    parentContact: '',
-    age: '',
-    email: '',
-    committee1: '',
+    fullname: "",
+    institution: "",
+    contact: "",
+    parentContact: "",
+    age: "",
+    email: "",
+    committee1: "",
     accommodation: false,
     terms: false,
   };
@@ -52,13 +52,13 @@ const Register = () => {
   return (
     <section className="register-section">
       <div className="container12">
-        <div style={{ width: '100%' }}>
+        <div style={{ width: "100%" }}>
           <div
             className="flex-grow py-16 xl:px-28 text-xs sm:text-left relative px-4 md:px-10 lg:px-20 textplacement"
             style={{
-              color: 'whitesmoke',
-              backgroundColor: '#191b1b61',
-              borderRadius: '70px',
+              color: "whitesmoke",
+              backgroundColor: "#191b1b61",
+              borderRadius: "70px",
               fontFamily: "'Cinzel', serif",
             }}
           >
@@ -67,11 +67,14 @@ const Register = () => {
               <br />
               <br />
               <span className="text-xl font-medium py-7 md:text-2xl lg:text-xl xl:text-2xl text-center">
-                We extend this amazing opportunity with our courageous participants. What are you waiting for?
+                We extend this amazing opportunity with our courageous
+                participants. What are you waiting for?
               </span>
             </p>
             <br />
-            <p className="text-2xl font-bold py-2 md:text-3xl lg:text-xl xl:text-4xl text-center">Register now!</p>
+            <p className="text-2xl font-bold py-2 md:text-3xl lg:text-xl xl:text-4xl text-center">
+              Register now!
+            </p>
             <p className="text-xl font-bold py-3 md:text-2xl lg:text-lg xl:text-3xl text-center">
               Dates: <span className="font-normal">9-10 November 2024</span>
             </p>
@@ -81,17 +84,28 @@ const Register = () => {
             <br />
 
             <div className="application">
-              <form onSubmit={formik.handleSubmit} className="w-full h-full form-style grid grid-cols-1 sm:grid-cols-2" id="registrationForm">
-
+              <form
+                onSubmit={formik.handleSubmit}
+                className="w-full h-full form-style grid grid-cols-1 sm:grid-cols-2"
+                id="registrationForm"
+              >
                 <div className="form-group">
-                  <label htmlFor="fullname" className="after:content-['*'] after:ml-0.5 after:text-red-500">Participant's Name:</label>
+                  <label
+                    htmlFor="fullname"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Participant's Name:
+                  </label>
                   <input
                     type="text"
                     id="fullname"
                     name="fullname"
                     placeholder="Full Name"
-                    className={`text-dark ${formik.errors.fullname && formik.touched.fullname ? 'input-error' : ''
-                      }`}
+                    className={`text-dark ${
+                      formik.errors.fullname && formik.touched.fullname
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.fullname}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -102,14 +116,22 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="institution" className="after:content-['*'] after:ml-0.5 after:text-red-500">Institution Name:</label>
+                  <label
+                    htmlFor="institution"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Institution Name:
+                  </label>
                   <input
                     type="text"
                     id="institution"
                     name="institution"
                     placeholder="Institution Name"
-                    className={`text-dark ${formik.errors.institution && formik.touched.institution ? 'input-error' : ''
-                      }`}
+                    className={`text-dark ${
+                      formik.errors.institution && formik.touched.institution
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.institution}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -119,16 +141,23 @@ const Register = () => {
                   )}
                 </div>
 
-
                 <div className="form-group">
-                  <label htmlFor="contact" className="after:content-['*'] after:ml-0.5 after:text-red-500">Phone No.:</label>
+                  <label
+                    htmlFor="contact"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Phone No.:
+                  </label>
                   <input
                     type="tel"
                     id="contact"
                     name="contact"
                     placeholder="123-456-7890"
-                    className={`text-dark ${formik.errors.contact && formik.touched.contact ? 'input-error' : ''
-                      }`}
+                    className={`text-dark ${
+                      formik.errors.contact && formik.touched.contact
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.contact}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -145,55 +174,89 @@ const Register = () => {
                     id="parentContact"
                     name="parentContact"
                     placeholder="123-456-7890"
-                    className={`text-dark ${formik.errors.parentContact && formik.touched.parentContact ? 'input-error' : ''
-                      }`}
+                    className={`text-dark ${
+                      formik.errors.parentContact &&
+                      formik.touched.parentContact
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.parentContact}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   />
-                  {formik.errors.parentContact && formik.touched.parentContact && (
-                    <Error msg={formik.errors.parentContact} />
-                  )}
+                  {formik.errors.parentContact &&
+                    formik.touched.parentContact && (
+                      <Error msg={formik.errors.parentContact} />
+                    )}
                 </div>
 
-
                 <div className="form-group">
-                  <label htmlFor="age" className="after:content-['*'] after:ml-0.5 after:text-red-500">Age:</label>
+                  <label
+                    htmlFor="age"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Age:
+                  </label>
                   <input
                     type="number"
                     id="age"
                     name="age"
                     placeholder="Age"
-                    className={`text-dark ${formik.errors.age && formik.touched.age ? 'input-error' : ''}`}
+                    className={`text-dark ${
+                      formik.errors.age && formik.touched.age
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.age}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   />
-                  {formik.errors.age && formik.touched.age && <Error msg={formik.errors.age} />}
+                  {formik.errors.age && formik.touched.age && (
+                    <Error msg={formik.errors.age} />
+                  )}
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500">Mail Id:</label>
+                  <label
+                    htmlFor="email"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Mail Id:
+                  </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     placeholder="@gmail.com"
-                    className={`text-dark ${formik.errors.email && formik.touched.email ? 'input-error' : ''}`}
+                    className={`text-dark ${
+                      formik.errors.email && formik.touched.email
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   />
-                  {formik.errors.email && formik.touched.email && <Error msg={formik.errors.email} />}
+                  {formik.errors.email && formik.touched.email && (
+                    <Error msg={formik.errors.email} />
+                  )}
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="committee1" className="after:content-['*'] after:ml-0.5 after:text-red-500">Committee Preference-1:</label>
+                  <label
+                    htmlFor="committee1"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Committee Preference-1:
+                  </label>
                   <select
                     id="committee1"
                     name="committee1"
-                    className={`text-dark ${formik.errors.committee1 && formik.touched.committee1 ? 'input-error' : ''
-                      }`}
+                    className={`text-dark ${
+                      formik.errors.committee1 && formik.touched.committee1
+                        ? "input-error"
+                        : ""
+                    }`}
                     value={formik.values.committee1}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -221,9 +284,11 @@ const Register = () => {
                     onBlur={formik.handleBlur}
                     checked={formik.values.accommodation}
                   />
-                  <label htmlFor="accommodation">Accommodation (If Needed):</label>
+                  <label htmlFor="accommodation">
+                    Accommodation (If Needed):
+                  </label>
                   <span className="response" id="responseText">
-                    {accommodation ? 'Yes' : 'No'}
+                    {accommodation ? "Yes" : "No"}
                   </span>
                 </div>
 
@@ -237,13 +302,22 @@ const Register = () => {
                     checked={formik.values.terms}
                   />
                   <span className="text-white fs-4">
-                    I agree to the <a href="/" id="termsLink">terms and conditions</a>
+                    I agree to the{" "}
+                    <a href="/" id="termsLink">
+                      terms and conditions
+                    </a>
                   </span>
-                  {formik.errors.terms && formik.touched.terms && <Error msg={formik.errors.terms} />}
+                  {formik.errors.terms && formik.touched.terms && (
+                    <Error msg={formik.errors.terms} />
+                  )}
                 </div>
 
-                <div className='col-span-2'>
-                  <button type="submit" id="applyButton" className="applybtn fs-4 text-dark">
+                <div className="col-span-2">
+                  <button
+                    type="submit"
+                    id="applyButton"
+                    className="applybtn fs-4 text-dark"
+                  >
                     Apply
                   </button>
                 </div>
@@ -257,7 +331,10 @@ const Register = () => {
             id="toast"
             className="toast p-2 fixed w-full h-full inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-hidden"
           >
-            <div className="bg-white p-5 rounded-md text-center shadow-md" role="alert">
+            <div
+              className="bg-white p-5 rounded-md text-center shadow-md"
+              role="alert"
+            >
               <strong>Form submitted successfully!</strong>
             </div>
           </div>

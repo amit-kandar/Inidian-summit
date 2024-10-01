@@ -6,27 +6,60 @@ const Register = () => {
   const [accommodation, setAccommodation] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
 
-  const updateResponse = () => {
-    setAccommodation(!accommodation);
+  const initialValues = {
+    fullname: '',
+    institution: '',
+    contact: '',
+    parentContact: '',
+    age: '',
+    email: '',
+    committee1: '',
+    accommodation: false,
+    terms: false,
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setToastVisible(true);
-    setTimeout(() => {
-      setToastVisible(false);
-    }, 3000); // Hide toast after 3 seconds
-  };
+  const formik = useFormik({
+    initialValues,
+    validationSchema: registerSchema,
+    onSubmit: async (values, { resetForm }) => {
+      // Replace with your actual API endpoint
+      // const host = 'http://localhost:8080/api/v1/register/';
+      // try {
+      //   const response = await axios.post(host, values);
+      //   console.log(response);
+      //   setToastVisible(true);
+      //   resetForm();
+      //   setTimeout(() => {
+      //     setToastVisible(false);
+      //   }, 3000); // Hide toast after 3 seconds
+      // } catch (error) {
+      //   console.error(error);
+      //   // Optionally, handle error messages here
+      // }
+      console.log(values);
+      setToastVisible(true);
+      resetForm();
+    },
+  });
+
+const ContactUs = () => {
+  // ... other code
 
   const closeModal = () => {
     document.getElementById("termsModal").style.display = "none";
   };
+
+  const updateResponse = () => {
+    setAccommodation(!accommodation);
+  };
+  };
+
   return (
     <section className="register-section">
       <div className="container12">
-        <div className="left-side">
+        <div style={{ width: '100%' }}>
           <div
-            className="flex-grow py-14 xl:px-28 text-xs sm:text-left relative px-4 md:px-10 lg:px-20 textplacement"
+            className="flex-grow py-16 xl:px-28 text-xs sm:text-left relative px-4 md:px-10 lg:px-20 textplacement"
             style={{
               color: "whitesmoke",
               backgroundColor: "#191b1b61",
@@ -253,10 +286,11 @@ const Register = () => {
               </button>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
 };
+
 
 export default Register;

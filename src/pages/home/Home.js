@@ -30,7 +30,7 @@ const Home = () => {
               style={{
                 color: "#fe491e",
                 textAlign: "center",
-                fontSize: "80px",
+                fontSize: "50px",
                 fontFamily: "Poppins",
               }}
             >
@@ -73,7 +73,7 @@ const Home = () => {
               color: "#fe491e",
               textAlign: "center",
               paddingTop: "40px",
-              fontSize: "70px",
+              fontSize: "50px",
               fontFamily: "Poppins",
             }}
           >
@@ -143,7 +143,7 @@ const Home = () => {
                   style={{
                     color: "#fe491e",
                     fontSize: "50px",
-                    paddingTop: "40px",
+                    paddingTop: "50px",
                     fontFamily: "Poppins, sans-serif",
                   }}
                 >

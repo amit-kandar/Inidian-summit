@@ -1,145 +1,106 @@
-header {
-  width: 100%;
-  background-color: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  position: absolute;
-  z-index: 9999;
-  transition: all 0.5s ease-in-out;
-  font-family: "Poppins", sans-serif;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-/* header .logo {} */
+html {
+  margin: 0;
+  padding: 0;
+}
 
-header .logo img {
-  height: 70px;
+.form-style {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-error {
+  border: 1px solid #ff0000;
+}
+
+.text-dark {
+  color: #333;
+}
+
+.applybtn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.applybtn:hover {
+  background-color: #3e8e41;
+}
+
+.toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.toast strong {
+  font-weight: bold;
 }
 
 nav {
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  margin: 0;
+  padding: 0;
 }
 
 nav ul {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 15px;
-  list-style-type: none;
-  text-transform: uppercase;
-}
-
-nav ul li {
-  padding: 0 10px;
-  position: relative;
-}
-
-nav ul li a {
-  color: rgb(255, 255, 255);
-  font-size: 13px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-nav ul li a:hover,
-#active {
-  border-bottom: 1px solid white;
-}
-
-nav ul li:hover #committee,
-nav ul li:hover #Our_Organisation,
-nav ul li:hover #about,
-nav ul li:hover #Register_Now {
-  display: block;
-}
-
-#committee {
-  width: 600px;
-  height: 270px;
-}
-
-#Our_Organisation {
-  width: 400px;
-  height: 100px;
-}
-
-#about {
-  width: 220px;
-  height: 150px;
-}
-
-#Register_button {
-  background-color: rgb(233, 86, 19);
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  color: rgb(255, 255, 255);
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  white-space: nowrap;
-}
-
-#Register_Now {
-  position: absolute;
-  top: 30px;
-  width: 80%;
-  padding: 0%;
-  height: 30px;
-}
-
-nav ul li ul {
-  position: absolute;
-  /* top: 30px; */
-  display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: start;
-  background-color: rgb(0, 0, 0);
-  display: none;
-  border-radius: 10px;
+  padding-left: 10px;
+  row-gap: 30px;
 }
 
 nav ul li ul li {
-  padding: 5px;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  font-size: 15px;
 }
 
 nav ul li ul li a {
-  font-size: 12px;
-}
-
-nav.show {
-  top: 100px;
-}
-
-@media screen and (max-width: 1380px) {
-  nav ul li ul {
-    padding: 0;
-    /* margin: 0; */
-  }
-
-  #Register_button {
-    display: none;
-  }
-
-  nav ul li {
-    padding: 0 5px;
-  }
-}
-
-#cross {
-  color: rgb(255, 255, 255);
-  font-size: 55px;
-  display: none;
-  cursor: pointer;
+  font-size: 13px;
 }
 
 #hamburger {
+  display: block;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#cross {
   display: none;
-  color: rgb(255, 255, 255);
+}
+
+nav.show {
+  transform: translateX(0);
 }
 
 @media screen and (max-width: 1320px) {
@@ -172,7 +133,6 @@ nav.show {
     transition: all 0.5s ease-in-out;
     width: 100%;
     height: fit-content;
-    /* display: none; */
     background-color: rgb(0, 0, 0);
   }
 
@@ -204,8 +164,8 @@ nav.show {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fff; /* Adjust background color as needed */
-    z-index: 999;
+    background-color: #fff;
+    z-index: 1;
     transition: transform 0.3s ease-in-out;
     transform: translateX(100%);
   }

@@ -63,7 +63,7 @@ const ContactUs = () => {
                   <input
                     type="text"
                     placeholder="Email"
-                    className="w-full mt-2 px-2 py-1 border rounded-lg text-white focus:outline-none focus:border-green-500"
+                    className="w-full mt-2 px-2 py-1 border rounded-lg text-dark focus:outline-none focus:border-green-500"
                   />
                 </div>
               </div>

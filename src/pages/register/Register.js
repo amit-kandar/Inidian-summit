@@ -214,7 +214,8 @@ const Register = () => {
                 type="submit"
                 id="applyButton"
                 className="applybtn"
-                disabled={!accommodation}
+
+                /* removed: disabled={!accommodation} */
               >
                 Apply
               </button>

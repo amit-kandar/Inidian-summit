@@ -1,25 +1,52 @@
 import React, { useState } from 'react';
+import { useFormik } from 'formik';
+import registerSchema from '../../schema/registerSchema';
+import Error from '../../components/Error';
+// import axios from 'axios';
 import './register.css';
-import { QR_CODE } from '../../utils/constant';
 
 const Register = () => {
   const [accommodation, setAccommodation] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
 
+  const initialValues = {
+    fullname: '',
+    institution: '',
+    contact: '',
+    parentContact: '',
+    age: '',
+    email: '',
+    committee1: '',
+    accommodation: false,
+    terms: false,
+  };
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema: registerSchema,
+    onSubmit: async (values, { resetForm }) => {
+      // Replace with your actual API endpoint
+      // const host = 'http://localhost:8080/api/v1/register/';
+      // try {
+      //   const response = await axios.post(host, values);
+      //   console.log(response);
+      //   setToastVisible(true);
+      //   resetForm();
+      //   setTimeout(() => {
+      //     setToastVisible(false);
+      //   }, 3000); // Hide toast after 3 seconds
+      // } catch (error) {
+      //   console.error(error);
+      //   // Optionally, handle error messages here
+      // }
+      console.log(values);
+      setToastVisible(true);
+      resetForm();
+    },
+  });
+
   const updateResponse = () => {
     setAccommodation(!accommodation);
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setToastVisible(true);
-    setTimeout(() => {
-      setToastVisible(false);
-    }, 3000); // Hide toast after 3 seconds
-  };
-
-  const closeModal = () => {
-    document.getElementById('termsModal').style.display = 'none';
   };
 
   return (
@@ -35,7 +62,6 @@ const Register = () => {
               fontFamily: "'Cinzel', serif",
             }}
           >
-            {/* Event details */}
             <p className="text-2xl font-bold py-2 md:text-3xl lg:text-xl xl:text-4xl text-center">
               The Indian Summit family welcomes you!
               <br />
@@ -53,123 +79,191 @@ const Register = () => {
               Venue: <span className="font-normal">Jaipur, Rajasthan</span>
             </p>
             <br />
-            {/* <p className="text-2xl font-bold py-2 md:text-3xl lg:text-xl xl:text-4xl text-center">Steps to Register!</p>
-            
-            <p className="text-2xl font-bold py-2 md:text-xl lg:text-lg underline">Step 1:</p>
-            <div className="text-xl font-medium p-3 md:text-2xl lg:text-xl xl:text-2xl bg-black bg-opacity-50 rounded-lg mb-4 text-center">
-              For UPI Transaction:
-              <br />
-              <span className="text-lg w-full">Scan the QR Code given down below.</span>
-              <img src={QR_CODE} className="h-62 md:40 lg:h-96 mx-auto mt-4" alt="QR Code" />
-              <br />
-            </div>
-            <p className="text-xl text-center font-medium p-3 md:text-2xl lg:text-xl xl:text-2xl">OR</p>
-            <p className="text-xl font-medium p-3 md:text-2xl lg:text-xl xl:text-2xl bg-black bg-opacity-50 rounded-lg">
-              For Bank transfer:
-              <br />
-              <span className="text-lg">
-                Bank account details:
-                <br />
-                - Bank name: Malviya Urban Co-operative Bank Ltd<br />
-                - Account holder: The Indian Summit <br />
-                - Account no.: 40800020311002015<br />
-                - IFSC Code: HDFC0CMUCBL
-              </span>
-            </p>
-            <p className="text-2xl font-bold py-2 md:text-xl lg:text-lg mt-3 underline">Step 2:</p>
-            <span className="text-xl font-medium py-7 md:text-2xl lg:text-xl xl:text-2xl">
-              Proceed with payment <span className="text-sm">(Take screenshot of the payment AND take a note of your UPI Reference ID/Transaction ID)</span>
-            </span>
-            <p className="text-2xl font-bold py-2 md:text-xl lg:text-lg mt-3 underline">Step 3:</p>
-            <span className="text-xl font-medium py-7 md:text-2xl lg:text-xl xl:text-2xl">Fill the form with the required details</span>
-            <p className="text-2xl font-bold py-2 md:text-xl lg:text-lg mt-3 underline">Step 4:</p>
-            <span className="text-xl font-medium py-7 md:text-2xl lg:text-xl xl:text-2xl">Click on Apply.</span> */}
 
             <div className="application">
-  <form id="registrationForm" method="post" onSubmit={handleFormSubmit}>
-    <div className="form-row">
-      <div className="form-group">
-        <label htmlFor="name">Participant's Name:</label>
-        <input type="text" id="name" className='text-dark ' name="fullname" placeholder="Full Name" required />
-      </div>
+              <form onSubmit={formik.handleSubmit} className="w-full h-full form-style" id="registrationForm">
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="fullname" className="after:content-['*'] after:ml-0.5 after:text-red-500">Participant's Name:</label>
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      placeholder="Full Name"
+                      className={`text-dark ${formik.errors.fullname && formik.touched.fullname ? 'input-error' : ''
+                        }`}
+                      value={formik.values.fullname}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.fullname && formik.touched.fullname && (
+                      <Error msg={formik.errors.fullname} />
+                    )}
+                  </div>
 
-      <div className="form-group">
-        <label htmlFor="institution">Institution Name:</label>
-        <input type="text" id="institution" className='text-dark' name="institution" placeholder="Institution Name" required />
-      </div>
-    </div>
+                  <div className="form-group">
+                    <label htmlFor="institution" className="after:content-['*'] after:ml-0.5 after:text-red-500">Institution Name:</label>
+                    <input
+                      type="text"
+                      id="institution"
+                      name="institution"
+                      placeholder="Institution Name"
+                      className={`text-dark ${formik.errors.institution && formik.touched.institution ? 'input-error' : ''
+                        }`}
+                      value={formik.values.institution}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.institution && formik.touched.institution && (
+                      <Error msg={formik.errors.institution} />
+                    )}
+                  </div>
+                </div>
 
-    <div className="form-row">
-      <div className="form-group">
-        <label htmlFor="contact">Phone No.:</label>
-        <input type="tel" id="contact"className='text-dark' name="contact" placeholder="123-456-7890" required />
-      </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="contact" className="after:content-['*'] after:ml-0.5 after:text-red-500">Phone No.:</label>
+                    <input
+                      type="tel"
+                      id="contact"
+                      name="contact"
+                      placeholder="123-456-7890"
+                      className={`text-dark ${formik.errors.contact && formik.touched.contact ? 'input-error' : ''
+                        }`}
+                      value={formik.values.contact}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.contact && formik.touched.contact && (
+                      <Error msg={formik.errors.contact} />
+                    )}
+                  </div>
 
-      <div className="form-group">
-        <label htmlFor="parentContact">Optional Phone No.:</label>
-        <input type="tel" id="parentContact"className='text-dark' name="parentContact" placeholder="123-456-7890" />
-      </div>
-    </div>
+                  <div className="form-group">
+                    <label htmlFor="parentContact">Optional Phone No.:</label>
+                    <input
+                      type="tel"
+                      id="parentContact"
+                      name="parentContact"
+                      placeholder="123-456-7890"
+                      className={`text-dark ${formik.errors.parentContact && formik.touched.parentContact ? 'input-error' : ''
+                        }`}
+                      value={formik.values.parentContact}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.parentContact && formik.touched.parentContact && (
+                      <Error msg={formik.errors.parentContact} />
+                    )}
+                  </div>
+                </div>
 
-    <div className="form-row">
-      <div className="form-group">
-        <label htmlFor="age">Age:</label>
-        <input type="number" id="age" className='text-dark' name="age" placeholder="Age" required />
-      </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="age" className="after:content-['*'] after:ml-0.5 after:text-red-500">Age:</label>
+                    <input
+                      type="number"
+                      id="age"
+                      name="age"
+                      placeholder="Age"
+                      className={`text-dark ${formik.errors.age && formik.touched.age ? 'input-error' : ''}`}
+                      value={formik.values.age}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.age && formik.touched.age && <Error msg={formik.errors.age} />}
+                  </div>
 
-      <div className="form-group">
-        <label htmlFor="email">Mail Id:</label>
-        <input type="email" id="email" className='text-dark' name="email" placeholder="@gmail.com" required />
-      </div>
-    </div>
+                  <div className="form-group">
+                    <label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500">Mail Id:</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="@gmail.com"
+                      className={`text-dark ${formik.errors.email && formik.touched.email ? 'input-error' : ''}`}
+                      value={formik.values.email}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.errors.email && formik.touched.email && <Error msg={formik.errors.email} />}
+                  </div>
+                </div>
 
-    <div className="form-group">
-      <label htmlFor="committee1">Committee Preference-1:</label>
-      <select id="committee1" className='text-dark' name="committee1" required>
-        <option value="" disabled selected>Select your committee</option>
-        <option value="Lok Sabha">Lok Sabha</option>
-      </select>
-    </div>
+                <div className="form-group">
+                  <label htmlFor="committee1" className="after:content-['*'] after:ml-0.5 after:text-red-500">Committee Preference-1:</label>
+                  <select
+                    id="committee1"
+                    name="committee1"
+                    className={`text-dark ${formik.errors.committee1 && formik.touched.committee1 ? 'input-error' : ''
+                      }`}
+                    value={formik.values.committee1}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  >
+                    <option value="" disabled>
+                      Select your committee
+                    </option>
+                    <option value="Lok Sabha">Lok Sabha</option>
+                    {/* Add more options as needed */}
+                  </select>
+                  {formik.errors.committee1 && formik.touched.committee1 && (
+                    <Error msg={formik.errors.committee1} />
+                  )}
+                </div>
 
-    <div className="accommodation-container">
-      <label htmlFor="accommodation">Accommodation (If Needed):</label>
-      <input type="checkbox" id="accommodation" name="accommodation" onClick={updateResponse} />
-      <span className="response" id="responseText">{accommodation ? 'Yes' : 'No'}</span>
-    </div>
+                <div className="accommodation-container">
+                  <label htmlFor="accommodation">Accommodation (If Needed):</label>
+                  <input
+                    type="checkbox"
+                    id="accommodation"
+                    name="accommodation"
+                    onChange={(e) => {
+                      formik.handleChange(e);
+                      updateResponse();
+                    }}
+                    onBlur={formik.handleBlur}
+                    checked={formik.values.accommodation}
+                  />
+                  <span className="response" id="responseText">
+                    {accommodation ? 'Yes' : 'No'}
+                  </span>
+                </div>
 
-    <div className="terms-container">
-      <input type="checkbox" id="terms" name="terms" required />
-      <span className='text-dark fs-4'>I agree to the <a href="/" id="termsLink">terms and conditions</a></span>
-    </div>
+                <div className="terms-container">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    checked={formik.values.terms}
+                  />
+                  <span className="text-white fs-4">
+                    I agree to the <a href="/" id="termsLink">terms and conditions</a>
+                  </span>
+                  {formik.errors.terms && formik.touched.terms && <Error msg={formik.errors.terms} />}
+                </div>
 
-    <button type="submit" id="applyButton" className="applybtn fs-4 text-dark" disabled={!accommodation}>
-      Apply
-    </button>
-  </form>
-</div>
-
+                <button type="submit" id="applyButton" className="applybtn fs-4 text-dark">
+                  Apply
+                </button>
+              </form>
+            </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: '600px', width: '100%', marginTop: '20px' }}>
-          {toastVisible && (
-            <div id="toast" className="toast p-2 fixed w-full h-full inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-hidden">
-              <div className="bg-white w-full h-44 lg:w-1/2 rounded-xl flex items-center justify-center text-xl font-semibold">
-                Registered Successfully!
-              </div>
-            </div>
-          )}
-
-          <div id="termsModal" className="modal">
-            <div className="modal-content" style={{ padding: '20px' }}>
-              <h2 style={{ fontWeight: 'bold', fontSize: '30px' }}>The Indian Summit</h2>
-              <h3 style={{ fontWeight: '600', fontSize: '20px', marginTop: '15px' }}>Terms and Conditions</h3>
-              {/* Terms and conditions text here */}
-              <button onClick={closeModal} className="close">Close</button>
+        {toastVisible && (
+          <div
+            id="toast"
+            className="toast p-2 fixed w-full h-full inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center overflow-hidden"
+          >
+            <div className="bg-white p-5 rounded-md text-center shadow-md" role="alert">
+              <strong>Form submitted successfully!</strong>
             </div>
           </div>
-        </div>
-      </div>     
+        )}
+      </div>
     </section>
   );
 };

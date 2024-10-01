@@ -136,6 +136,10 @@
   margin-right: 10px;
 }
 
+.input-error {
+  border-color: red !important;
+}
+
 .form-group:last-child {
   margin-right: 0;
 }
@@ -248,8 +252,8 @@ button.applybtn:hover {
 }
 
 button.applybtn:disabled {
-  background-color: #cccccc;
-  color: #666666;
+  background-color: rgba(227, 157, 6, 0.4);
+  color: #fff;
   cursor: not-allowed;
 }
 

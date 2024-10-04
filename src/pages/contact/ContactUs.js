@@ -58,7 +58,6 @@ const ContactUs = () => {
             <div className="lg:flex relative">
               <div className="absolute inset-0 opacity-10 z-0"></div>
               <div className="w-full lg:w-1/2 px-1 mb-4 z-10">
-                <br></br>
                 <div className="w-full">
                   <label className="text-white font-light">Phone</label>
                   <input
@@ -69,7 +68,7 @@ const ContactUs = () => {
                 </div>
               </div>
               <div className="w-full lg:w-1/2 px-1 mb-4 z-10">
-                <img src="" alt="" className="mr-3 h-5" />
+                {/*removed image tag to align the phone and email labels*/}
                 <div className="w-full">
                   <label className="text-white font-light">Email</label>
                   <input
@@ -215,7 +214,7 @@ const ContactUs = () => {
               </a>
             </div>
           </div>
-          <div className="orange-gradient"></div>
+          {/*removed <div className="orange-gradient"></div>*/}
         </div>
       </div>
     </section>

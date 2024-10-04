@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import registerSchema from "../../schema/registerSchema";
 import Error from "../../components/Error";
-// import axios from 'axios';
+import axios from 'axios';
 import "./register.css";
 
 const Register = () => {
   const [accommodation, setAccommodation] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(null); // Error state
 
   const initialValues = {
     fullname: "",
@@ -25,23 +27,21 @@ const Register = () => {
     initialValues,
     validationSchema: registerSchema,
     onSubmit: async (values, { resetForm }) => {
-      // Replace with your actual API endpoint
-      // const host = 'http://localhost:8080/api/v1/register/';
-      // try {
-      //   const response = await axios.post(host, values);
-      //   console.log(response);
-      //   setToastVisible(true);
-      //   resetForm();
-      //   setTimeout(() => {
-      //     setToastVisible(false);
-      //   }, 3000); // Hide toast after 3 seconds
-      // } catch (error) {
-      //   console.error(error);
-      //   // Optionally, handle error messages here
-      // }
-      console.log(values);
-      setToastVisible(true);
-      resetForm();
+      setLoading(true);  // Start loading
+      setError(null);    // Clear any previous errors
+      try {
+        const response = await axios.post('http://127.0.0.1:5000/create-payment', {
+          amount: values.amount, // Send only the amount field
+        });
+
+        if (response.data.payment_url) {
+          window.location.href = response.data.payment_url; // Redirect to payment URL on success
+        }
+      } catch (error) {
+        setError('Failed to submit the form. Please try again.'); // Handle failure
+      } finally {
+        setLoading(false);  // Stop loading
+      }
     },
   });
 
@@ -101,11 +101,10 @@ const Register = () => {
                     id="fullname"
                     name="fullname"
                     placeholder="Full Name"
-                    className={`text-dark ${
-                      formik.errors.fullname && formik.touched.fullname
-                        ? "input-error"
-                        : ""
-                    }`}
+                    className={`text-dark ${formik.errors.fullname && formik.touched.fullname
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.fullname}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -127,11 +126,10 @@ const Register = () => {
                     id="institution"
                     name="institution"
                     placeholder="Institution Name"
-                    className={`text-dark ${
-                      formik.errors.institution && formik.touched.institution
-                        ? "input-error"
-                        : ""
-                    }`}
+                    className={`text-dark ${formik.errors.institution && formik.touched.institution
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.institution}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -153,11 +151,10 @@ const Register = () => {
                     id="contact"
                     name="contact"
                     placeholder="123-456-7890"
-                    className={`text-dark ${
-                      formik.errors.contact && formik.touched.contact
-                        ? "input-error"
-                        : ""
-                    }`}
+                    className={`text-dark ${formik.errors.contact && formik.touched.contact
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.contact}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -174,12 +171,11 @@ const Register = () => {
                     id="parentContact"
                     name="parentContact"
                     placeholder="123-456-7890"
-                    className={`text-dark ${
-                      formik.errors.parentContact &&
+                    className={`text-dark ${formik.errors.parentContact &&
                       formik.touched.parentContact
-                        ? "input-error"
-                        : ""
-                    }`}
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.parentContact}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -202,11 +198,10 @@ const Register = () => {
                     id="age"
                     name="age"
                     placeholder="Age"
-                    className={`text-dark ${
-                      formik.errors.age && formik.touched.age
-                        ? "input-error"
-                        : ""
-                    }`}
+                    className={`text-dark ${formik.errors.age && formik.touched.age
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.age}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -228,11 +223,10 @@ const Register = () => {
                     id="email"
                     name="email"
                     placeholder="@gmail.com"
-                    className={`text-dark ${
-                      formik.errors.email && formik.touched.email
-                        ? "input-error"
-                        : ""
-                    }`}
+                    className={`text-dark ${formik.errors.email && formik.touched.email
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -252,11 +246,10 @@ const Register = () => {
                   <select
                     id="committee1"
                     name="committee1"
-                    className={`text-dark ${
-                      formik.errors.committee1 && formik.touched.committee1
-                        ? "input-error"
-                        : ""
-                    }`}
+                    className={`text-dark ${formik.errors.committee1 && formik.touched.committee1
+                      ? "input-error"
+                      : ""
+                      }`}
                     value={formik.values.committee1}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -269,6 +262,31 @@ const Register = () => {
                   </select>
                   {formik.errors.committee1 && formik.touched.committee1 && (
                     <Error msg={formik.errors.committee1} />
+                  )}
+                </div>
+
+                <div className="form-group">
+                  <label
+                    htmlFor="amount"
+                    className="after:content-['*'] after:ml-0.5 after:text-red-500"
+                  >
+                    Amount
+                  </label>
+                  <input
+                    type="number"
+                    id="amount"
+                    name="amount"
+                    placeholder="e.g. 100"
+                    className={`text-dark ${formik.errors.contact && formik.touched.contact
+                      ? "input-error"
+                      : ""
+                      }`}
+                    value={formik.values.amount}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                  />
+                  {formik.errors.amount && formik.touched.amount && (
+                    <Error msg={formik.errors.amount} />
                   )}
                 </div>
 
@@ -318,9 +336,10 @@ const Register = () => {
                     id="applyButton"
                     className="applybtn fs-4 text-dark"
                   >
-                    Apply
+                    {loading ? "Processing..." : "Apply"}
                   </button>
                 </div>
+                {error && <div className="col-span-2 error">{error}</div>}
               </form>
             </div>
           </div>

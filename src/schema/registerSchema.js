@@ -15,6 +15,10 @@ const registerSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
   committee1: Yup.string().required('Committee preference is required'),
   terms: Yup.boolean().oneOf([true], 'You must agree to the terms and conditions'),
+  amount: Yup.number()
+    .required('Amount is required')
+    .min(1, 'Amount must be at least 1')
+    .max(10000, 'Amount cannot exceed 10,000'),
 });
 
 export default registerSchema;
